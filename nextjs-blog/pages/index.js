@@ -15,8 +15,8 @@ export default function Home({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <p>Analista de sistemas na FAUS cursos online.</p>
         <p>
-          Visite meu <i class="fa fa-github" aria-hidden="true"></i>{' '}
-          <a href="https://github.com/fortmea">Github</a> ou meu <i class="fa fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/jo%C3%A3o-walter-amadeu-2773b51b9/">linkedIn</a>.
+          Visite meu <i className="fa fa-github" aria-hidden="true"></i>{' '}
+          <a href="https://github.com/fortmea">Github</a> ou meu <i className="fa fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/jo%C3%A3o-walter-amadeu-2773b51b9/">linkedIn</a>.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
