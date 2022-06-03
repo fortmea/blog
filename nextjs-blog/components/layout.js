@@ -12,6 +12,7 @@ export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
+      <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
