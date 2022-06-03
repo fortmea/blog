@@ -23,18 +23,19 @@ export default function Post({ postData, comments }) {
       <h5>Comentários:</h5>
       <ul className={utilStyles.list}>
         {comments.map(({ nome, conteudo, id }) => (
-          <li className={utilStyles.listItem} key={id}>
-            <h6>{nome}</h6>
-            <br />
-            <li className={utilStyles.lightText}>
-              <h6>{conteudo}</h6>
-            </li>
-            <hr></hr>
-          </li>
-          
+          <div className='card'>
+            <div className='container'>
+              <li className={utilStyles.listItem} key={id}>
+                <h5>{nome}</h5>
+                <li>
+                  <h4>{conteudo}</h4>
+                </li>
+                <hr></hr>
+              </li></div>
+          </div>
         ))}
       </ul>
-     
+
     </Layout>
   )
 }
@@ -57,6 +58,8 @@ export async function getStaticProps({ params }) {
     props: {
       postData,
       comments
-    }
+    },
+    revalidate: 10, 
   }
+  
 }
