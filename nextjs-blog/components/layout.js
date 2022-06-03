@@ -13,7 +13,7 @@ export default function Layout({ children, home }) {
     <div className={styles.container}>
       <Head>
       <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <meta
           name="description"
           content="Blog pessoal de João Walter Amadeu."
@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
       </Head>
       
       <header className={styles.header}>
-      <DarkModeToggle></DarkModeToggle>
+      
       <br></br>
         {home ? (
           <>
@@ -67,6 +67,9 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      <br/>
+      <DarkModeToggle></DarkModeToggle>
     </div>
+    
   )
 }

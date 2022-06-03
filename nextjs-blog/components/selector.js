@@ -2,11 +2,11 @@ import React from 'react';
 import useDarkMode from 'use-dark-mode';
 
 const DarkModeToggle = () => {
-    const darkMode = useDarkMode(false);
+    const darkMode = useDarkMode();
     if (darkMode.value == true) {
         return (
-            <button type="button" className='button-30' onClick={darkMode.disable}>
-                ☀
+            <button type="button" className='button-29 box-shadow-dark' onClick={darkMode.disable}>
+                <i className="fa fa-lightbulb-o" style={{color: "black"}} aria-hidden="true"></i>
             </button>);
     } else {
 
@@ -14,8 +14,8 @@ const DarkModeToggle = () => {
         return (
 
 
-            <button type="button" className='button-30' onClick={darkMode.enable}>
-                ☾
+            <button type="button" className='button-29' onClick={darkMode.enable}>
+                <i className="fa fa-moon-o" aria-hidden="true"></i>
             </button>
         );
     }
