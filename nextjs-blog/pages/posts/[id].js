@@ -59,7 +59,7 @@ export async function getStaticProps({ params }) {
       postData,
       comments
     },
-    revalidate: 10, 
+    revalidate: 1, 
   }
   
 }
