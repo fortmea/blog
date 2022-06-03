@@ -40,26 +40,19 @@ export default function Post({ postData, comments }) {
   )
 }
 
-export async function getStaticPaths() {
-  const paths = getAllPostIds()
-  return {
-    paths,
-    fallback: false
-  }
-}
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const postData = await getPostData(params.id)
+  const paths = getAllPostIds()
   const res = await (await fetch('https://apiblogjaozim.herokuapp.com/comments/list/?id=' + params.id)).json()
   const comments = Object.values(res);
-  console.log(res)
+  //console.log(res)
   //console.log(postData)
   return {
     props: {
       postData,
       comments
     },
-    revalidate: 1, 
   }
   
 }
