@@ -3,7 +3,7 @@ import useSWR from "swr";
 import utilStyles from '../styles/utils.module.css'
 
 export default function Comentarios({ identi }) {
-    const address = `https://flaskpylocaldb.fortmea.repl.co/comments/list/?id=${identi}`;
+    const address = `https://api.fortmea.tech/comments/list/?id=${identi}`;
     const fetcher = async (url) => {
         const response = await axios.get(url);
         return response.data;

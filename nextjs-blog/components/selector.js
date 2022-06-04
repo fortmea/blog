@@ -2,7 +2,7 @@ import React from 'react';
 import useDarkMode from 'use-dark-mode';
 
 const DarkModeToggle = () => {
-    const darkMode = useDarkMode();
+    const darkMode = useDarkMode(true);
     if (darkMode.value == true) {
         return (
             <button type="button" className='button-29 box-shadow-dark' onClick={darkMode.disable}>
