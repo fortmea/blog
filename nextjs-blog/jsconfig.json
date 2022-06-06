@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+      "baseUrl": "public"
+    },
+    "include": ["public"]
+  }

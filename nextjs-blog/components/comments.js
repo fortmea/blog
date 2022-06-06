@@ -9,7 +9,8 @@ export default function Comentarios({ identi }) {
         return response.data;
     }
     const data = useSWR(address, fetcher).data;
-    console.log(data)
+    //console.log(data)
+    if(data){
     return (<div>
         <h5>Comentários:</h5>
         <ul className={utilStyles.list}>
@@ -26,5 +27,6 @@ export default function Comentarios({ identi }) {
             ))}
         </ul>
     </div>
-    )
+    )}
+    else{return <h5>Não há comentarios a serem exibidos.</h5>}
 }
