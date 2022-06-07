@@ -15,7 +15,7 @@ function App({ Component, pageProps }) {
   return (
     <>
       {pageLoading
-        ? (<div className="lds-ripple center" style={{width:"2000px", color:"blue", }}><div></div><div></div><div></div><div></div></div>)
+        ? (<div className="background"><div className="lds-ripple"><div></div></div><div></div><div></div><div></div></div>)
         : <Component {...pageProps} />
       }
     </>

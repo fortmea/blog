@@ -14,7 +14,7 @@ export default function Post({ postData, params }) {
           <title>{postData.title}</title>
         </Head>
         <article>
-          <h2 className={utilStyles.headingXl} style={{textAlign:'center'}}>{postData.title}</h2>
+          <h3 className={utilStyles.headingXl} style={{textAlign:'center'}}>{postData.title}</h3>
           <div className={utilStyles.lightText}>
             <Date dateString={postData.date} />
           </div>
