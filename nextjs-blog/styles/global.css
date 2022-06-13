@@ -1,3 +1,4 @@
+@import url(fira_code.css);
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2);
@@ -27,7 +28,7 @@ body {
 
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family:  -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
@@ -51,13 +52,18 @@ body.dark-mode {
 }
 
 a {
+  font-family: 'Fira Code VF';
   color: #0070f3;
   text-decoration: none;
+}
+code{
+  font-family: 'Fira Code VF';
 }
 
 a:hover {
   text-decoration: underline;
 }
+
 
 img {
   max-width: 100%;

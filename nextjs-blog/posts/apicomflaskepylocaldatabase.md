@@ -1,6 +1,8 @@
 ---
 title: "Api com Flask e a Biblioteca pylocaldatabase para armazenamento de dados"
 date: "2022-06-06"
+anterior: "pylocaldatabase"
+proximo: ""
 ---
 
 Seguindo o tópico da minha [publicação anterior](../pylocaldatabase), estou desenvolvendo uma API, e utilizando-a nesse website para gerenciar os comentários das publicações. 
