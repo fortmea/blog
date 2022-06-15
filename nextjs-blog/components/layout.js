@@ -23,7 +23,6 @@ export default function Layout({ children, home }) {
       
       <header className={styles.header}>
       
-      <br></br>
         {home ? (
           <>
             <Image
