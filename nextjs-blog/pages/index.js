@@ -10,6 +10,7 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        
         <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
       </Head>
       <section className={utilStyles.headingMd}>

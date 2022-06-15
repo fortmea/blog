@@ -4,13 +4,12 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import DarkModeToggle from './selector'
-
 const name = 'João Walter Amadeu'
 export const siteTitle = 'Blog pessoal de João Walter Amadeu'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <Head>
       <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
         <link rel="icon" href="/favicon.svg" />
@@ -63,12 +62,13 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← De volta ao início</a>
+            <a><i className="fa fa-home" style={{color: "#999"}} aria-hidden="true"></i> De volta ao início</a>
           </Link>
         </div>
       )}
       <br/>
       <DarkModeToggle></DarkModeToggle>
+      
     </div>
     
   )

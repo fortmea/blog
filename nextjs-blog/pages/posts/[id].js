@@ -5,6 +5,7 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import Comentarios from '../../components/comments'
 
+
 export default function Post({ postData, params }) {
 
   return (
@@ -23,10 +24,10 @@ export default function Post({ postData, params }) {
       <Comentarios identi={params.id}></Comentarios>
       <div style={{paddingTop: "2em"}}>
         <div style={{ float: 'left'}}>
-          {postData.anterior != "" ? <a href={`/posts/${postData.anterior}`} className="button eight">{`<- Anterior`}</a> : ""}
+          {postData.anterior != "" ? <a href={`/posts/${postData.anterior}`}>{`<- Anterior`}</a> : ""}
         </div>
         <div style={{ float: 'right' }}>
-          {postData.proximo != "" ? <a href={`/posts/${postData.proximo}`} className="button eight">{`Próximo ->`}</a> : ""}
+          {postData.proximo != "" ? <a href={`/posts/${postData.proximo}`}>{`Próximo ->`}</a> : ""}
         </div>
       </div>
     </Layout>
