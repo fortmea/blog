@@ -1,0 +1,15 @@
+{
+    "name": "Blog João Walter Amadeu",
+    "short_name": "Blog jão",
+    "lang": "pt-BR",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#1a1919",
+    "icons": [
+      {
+        "src": "favicon.png",
+        "sizes": "256x256"
+      }
+    ],
+    "background_color": "#1a1919"
+  }

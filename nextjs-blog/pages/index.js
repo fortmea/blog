@@ -10,7 +10,20 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        
+        <link rel="manifest" href="manifest.json" />
+
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Blog jão" />
+        <meta name="apple-mobile-web-app-title" content="Blog jão" />
+        <meta name="theme-color" content="#1a1919" />
+        <meta name="msapplication-navbutton-color" content="#1a1919" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="msapplication-starturl" content="/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link rel="icon" sizes="256x256" href="favicon.png" />
+        <link rel="apple-touch-icon" sizes="256x256" href="favicon.png"></link>
         <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
       </Head>
       <section className={utilStyles.headingMd}>
