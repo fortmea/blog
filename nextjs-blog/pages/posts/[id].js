@@ -33,7 +33,7 @@ export default function Post({ postData, params }) {
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:type" content="article" />
         <meta property='article:published_time' content={postData.date} />
-        <meta property='og:image' content={`https://opengraph-generator-nu.vercel.app/${postData.title}.png?theme=light&md=1&fontSize=100px&images=https://fortmea.tech/favicon.svg&images=${postData.catimage}`} />
+        <meta property='og:image' content={`https://og.fortmea.tech/${postData.title}.png?theme=light&md=1&fontSize=100px&images=https://fortmea.tech/favicon.svg&images=${postData.catimage}`} />
         <meta property='article:author ' content='https://fortmea.tech/' />
 
         <title>{postData.title}</title>
