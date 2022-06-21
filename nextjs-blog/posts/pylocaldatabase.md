@@ -3,6 +3,7 @@ title: "Biblioteca para banco de dados local em Python"
 date: "2022-06-02"
 anterior: ""
 proximo: "apicomflaskepylocaldatabase"
+catimage: "https://www.python.org/static/community_logos/python-logo-generic.svg"
 ---
 
 Python é uma linguagem muito famosa por sua facilidade de uso, especialmente no aspecto da organização e estruturamento de dados.
