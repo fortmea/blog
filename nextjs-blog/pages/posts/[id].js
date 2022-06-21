@@ -5,8 +5,6 @@ import React, { useCallback, useRef } from 'react';
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import Comentarios from '../../components/comments'
-import * as htmlToImage from 'html-to-image';
-
 export default function Post({ postData, params }) {
   const refer = useRef(null);
 
