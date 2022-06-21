@@ -21,7 +21,13 @@ export default function Home({ allPostsData }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="msapplication-starturl" content="/" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+        <meta property="og:determiner" content="O" />
+        <meta property="og:site_name" content="Blog do jão" />
+        <meta property="og:title" content="Blog Jão" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description"
+          content="Um lugar para descrever minhas pesquisas, e desenvolvimentos profissionais e pessoais." />
         <link rel="icon" sizes="256x256" href="favicon.png" />
         <link rel="apple-touch-icon" sizes="256x256" href="favicon.png"></link>
         <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
@@ -58,6 +64,7 @@ export async function getStaticProps() {
   return {
     props: {
       allPostsData,
+      
     }
   }
 }
