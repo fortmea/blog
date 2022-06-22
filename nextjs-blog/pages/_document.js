@@ -5,7 +5,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <script src="noflash.js" />
+          <script src="https://fortmea.tech/noflash.js" />
           <Main className="principal" />
           <NextScript />
         </body>

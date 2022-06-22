@@ -22,3 +22,5 @@ Utilizando o IPNS podemos acessar um único endereço através de um gateway pú
 ---
 
 ### Esse website é desenvolvido utilizando NextJS e armazenado gratuitamente no IPFS.
+
+---
