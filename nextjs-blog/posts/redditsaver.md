@@ -13,7 +13,7 @@ Através dos dados encontrados no json, podemos acessar um link direto ao arquvo
 
 Os dados são todos processados localmente, fazendo com que a velocidade de download seja apenas limitada pela sua conexão com os servidores do Reddit.
 
-![Ferramenta reddit saver. Um campo de texto, um botão para fazer o download, barra de progresso em 100%](../public/images/redditsaver.png "A ferramenta é muito simples, precisando de apenas um click para ser utilizada. Além disso, todos os dados são processados localmente, sem lentidão causada pelo servidor da minha ferramenta.")
+![Ferramenta reddit saver. Um campo de texto, um botão para fazer o download, barra de progresso em 100%](https://fortmea.tech/images/redditsaver.png "A ferramenta é muito simples, precisando de apenas um click para ser utilizada. Além disso, todos os dados são processados localmente, sem lentidão causada pelo servidor da minha ferramenta.")
 
 ### Como acessar?
 
