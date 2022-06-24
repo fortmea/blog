@@ -61,7 +61,7 @@ export default function videosaver() {
                         <fieldset>
                             <Form.Group className="mb-3">
                                 <Form.Label htmlFor="inputurl">Link:</Form.Label>
-                                <Form.Control id="inputurl" value={input} onInput={e => setInput(e.target.value)} placeholder="Insert video link here..." />
+                                <Form.Control id="inputurl" value={input} onInput={(e) => { setInput(e.target.value); setdownloading(false); setDownloadp(0) }} placeholder="Insert video link here..." />
                             </Form.Group>
                             <Button onClick={download}>Download</Button>
                         </fieldset>
