@@ -7,13 +7,18 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head'
 import fileDownload from 'js-file-download'
 import axios from 'axios';
+import ProgressBar from 'react-bootstrap/ProgressBar'
 export default function videosaver() {
     const [input, setInput] = useState('');
+    const [downloadp, setDownloadp] = useState(0);
+    const [downloading, setdownloading] = useState(false);
     useEffect(() => {
         document.querySelector("body").classList.add("redditsaver");
     });
     async function download() {
-        const address = input.replace(input.lastIndexOf("/"), "") + ".json";
+        setdownloading(true);
+        var oadd = new URL(input)
+        const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
 
         const fetcher = async (url) => {
             const response = await axios.get(url);
@@ -29,7 +34,10 @@ export default function videosaver() {
         }
         const filedata = async (url) => {
             const response = await axios.get(url, {
-                responseType: 'blob',
+                responseType: 'blob', onDownloadProgress: function (progressEvent) {
+                    var prog = parseInt(progressEvent["loaded"]) / parseInt(progressEvent["total"])
+                    setDownloadp(Math.ceil(prog * 100))
+                }
             });
             return response.data;
         }
@@ -57,6 +65,8 @@ export default function videosaver() {
                             <Button onClick={download}>Download</Button>
                         </fieldset>
                     </Form>
+                    {downloading ? <div style={{ marginTop: '1em' }}><h5>Progress: </h5><ProgressBar  now={downloadp} label={`${downloadp}%`} /></div> : ""}
+
                 </Card.Body>
             </Card>
         </Container>
