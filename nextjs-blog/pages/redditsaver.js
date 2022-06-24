@@ -50,6 +50,7 @@ export default function videosaver() {
             <meta property='og:image' content="https://og.fortmea.tech/Reddit saver - download videos from reddit, in their original quality.png?theme=light&md=1&fontSize=100px&images=https://fortmea.tech/favicon.svg" />
             <meta property="og:description"
                 content={`A simple tool to download reddit videos.`} />
+
             <title>Reddit saver - download videos from Reddit</title>
         </Head>
         <Container>
@@ -65,7 +66,7 @@ export default function videosaver() {
                             <Button onClick={download}>Download</Button>
                         </fieldset>
                     </Form>
-                    {downloading ? <div style={{ marginTop: '1em' }}><h5>Progress: </h5><ProgressBar  now={downloadp} label={`${downloadp}%`} /></div> : ""}
+                    {downloading ? <div style={{ marginTop: '1em' }}><h5>Progress: </h5><ProgressBar now={downloadp} label={`${downloadp}%`} /></div> : ""}
 
                 </Card.Body>
             </Card>

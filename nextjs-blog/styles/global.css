@@ -61,13 +61,12 @@ body.light-mode div#__next {
   background-color: #fff;
 }
 
-body.redditsaver{
-  box-shadow: none;
-  margin-top: 50%;
-}
+
+
+
 
 body.dark-mode {
- 
+
 
 
 
@@ -88,6 +87,27 @@ body.dark-mode div#__next {
   margin-bottom: 1%;
   background-color: #1a1919;
 }
+
+body.redditsaver {
+  box-shadow: none;
+  margin-top: 50%;
+  transition: background-color 0.5s ease;
+  background-color: #FFF;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 1.05px, transparent 1.05px), radial-gradient(#444cf7 1.05px, #FFF 1.05px);
+  background-size: 42px 42px;
+  background-position: 0 0, 21px 21px;
+  color: #333;
+}
+
+body.dark-mode div#__next {
+  padding-bottom: 2%;
+  margin-top: 1%;
+  padding-top: 2%;
+  margin-bottom: 1%;
+  background-color: #FFF;
+}
+
 
 * {
   box-sizing: border-box;
