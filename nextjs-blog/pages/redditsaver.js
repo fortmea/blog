@@ -35,7 +35,7 @@ export default function videosaver() {
         if (audio) {
             const address = oadd.toString();
             const filedata = async (url) => {
-                const response = await axios.get(("http://api.fortmea.tech/video?url=" + url), {
+                const response = await axios.get(("https://api.fortmea.tech/video?url=" + url), {
                     responseType: 'blob', onDownloadProgress: function (progressEvent) {
                         var prog = parseInt(progressEvent["loaded"]) / parseInt(progressEvent["total"])
                         setDownloadp(Math.ceil(prog * 100))
