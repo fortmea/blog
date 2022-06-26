@@ -4,6 +4,7 @@ date: "2022-06-20"
 anterior: "apicomflaskepylocaldatabase"
 proximo: "redditsaver"
 catimage: "https://raw.githubusercontent.com/ipfs-inactive/logo/26a8332e2b1dc7e711561bc03f2e39e0c99e76f6/vector/ipfs-logo-vector-ice-text.svg"
+upd: ""
 ---
 ### Introdução
 É possível utilizar uma rede p2p para hospedar websites? Essa pergunta pode ser estranha, mas isso é sim possível. 

@@ -4,6 +4,7 @@ date: "2022-06-24"
 anterior: "ipfs"
 proximo: ""
 catimage: ""
+upd: "2022-06-26"
 ---
 
 ### Como funciona? 
@@ -14,6 +15,12 @@ Através dos dados encontrados no json, podemos acessar um link direto ao arquvo
 Os dados são todos processados localmente, fazendo com que a velocidade de download seja apenas limitada pela sua conexão com os servidores do Reddit.
 
 ![Ferramenta reddit saver. Um campo de texto, um botão para fazer o download, barra de progresso em 100%](https://fortmea.tech/images/redditsaver.png "A ferramenta é muito simples, precisando de apenas um click para ser utilizada. Além disso, todos os dados são processados localmente, sem lentidão causada pelo servidor da minha ferramenta.")
+
+### Audio
+##### Opcional, utilizando API. 
+<i><sub>Atualizado no dia 25/06/2022</sub></i>
+
+Audio é armazenado separadamente dos vídeos no Reddit, portanto é necessário utilizar o FFMPEG para juntar os arquivos. [A API utilizada no projeto pode ser encontrada aqui.](https://github.com/fortmea/flaskpylocaldb/blob/main/app.py)
 
 ### Como acessar?
 

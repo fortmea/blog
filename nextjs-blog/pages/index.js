@@ -42,14 +42,14 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Publicações</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, title, upd }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-                <Date dateString={date} />
+                <div><Date dateString={date} />{upd != "" ? "; Atualizado ":""}{upd != "" ? (<Date dateString={upd}></Date>) : ""}</div>
               </small>
             </li>
           ))}
@@ -64,7 +64,7 @@ export async function getStaticProps() {
   return {
     props: {
       allPostsData,
-      
+
     }
   }
 }

@@ -23,9 +23,9 @@ export default function Post({ postData, params }) {
       <article>
         <h3 className={utilStyles.headingXl} style={{ textAlign: 'center' }}>{postData.title}</h3>
         <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+          <div><Date dateString={postData.date} />{postData.upd != "" ? "; Atualizado ":""}{postData.upd != "" ? (<Date dateString={postData.upd}></Date>) : ""}</div>
         </div>
-        <div dangerouslySetInnerHTML= {{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
       <Comentarios identi={params.id}></Comentarios>
       <div style={{ paddingTop: "2em" }}>
