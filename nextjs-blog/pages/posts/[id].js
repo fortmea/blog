@@ -5,7 +5,8 @@ import React from 'react';
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import Comentarios from '../../components/comments'
-export default function Post({ postData, params }) {
+import Topics from '../../components/topics';
+export default function Post({ postData, params, topicos }) {
 
   return (
     <Layout>
@@ -22,9 +23,11 @@ export default function Post({ postData, params }) {
       </Head>
       <article>
         <h3 className={utilStyles.headingXl} style={{ textAlign: 'center' }}>{postData.title}</h3>
+        
         <div className={utilStyles.lightText}>
           <div><Date dateString={postData.date} />{postData.upd != "" ? "; Atualizado ":""}{postData.upd != "" ? (<Date dateString={postData.upd}></Date>) : ""}</div>
         </div>
+        <div dangerouslySetInnerHTML={{ __html: topicos }} style={{fontSize:"0.8em", marginTop:"0.8em"}} />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
       <Comentarios identi={params.id}></Comentarios>
@@ -52,12 +55,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 
   const postData = await getPostData(params.id)
-
+  var topicos = Topics(postData.ids, postData.titulos)
   return {
     props: {
       postData,
       params,
-
+      topicos
     }
 
   }

@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
-
+import { uid } from 'uid'
 const postsDirectory = path.join(process.cwd(), 'posts')
 var posts = [];
 export function getSortedPostsData() {
@@ -58,10 +58,28 @@ export async function getPostData(id) {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()
-
+  var contentHtml = processedContent.toString()
+  var newcontent = "";
+  var ids = []
+  var titulos = []
+  contentHtml.split("\n").forEach(function (value, index) {
+    var id = uid();
+    if (value.search("<h3>") == 0) {
+      titulos.push(value.replace("<h3>", "").replace("</h3>",""))
+      value = value.replace("<h3>", "<h3 id='" + id + "'>")
+      
+      ids.push(id)
+    }
+    newcontent += (value + "\n")
+    
+  });
+  contentHtml = newcontent;
+  //console.log(newcontent)
   // Combine the data with the id and contentHtml
+  //console.log(ids)
   return {
+    ids,
+    titulos,
     id,
     contentHtml,
     ...matterResult.data
