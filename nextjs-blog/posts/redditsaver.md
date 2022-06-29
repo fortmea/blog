@@ -18,7 +18,7 @@ Os dados são todos processados localmente, fazendo com que a velocidade de down
 
 ### Audio
 ##### Opcional, utilizando API. 
-<i><sub>Atualizado no dia 25/06/2022</sub></i>
+<i>Atualizado no dia 26/06/2022</i>
 
 Audio é armazenado separadamente dos vídeos no Reddit, portanto é necessário utilizar o FFMPEG para juntar os arquivos. [A API utilizada no projeto pode ser encontrada aqui.](https://github.com/fortmea/flaskpylocaldb/blob/main/app.py)
 
