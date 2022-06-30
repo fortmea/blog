@@ -19,6 +19,7 @@ Os dados são todos processados localmente, fazendo com que a velocidade de down
 ### Audio
 ##### Client-side
 Atualizado no dia 30/06/2022
+
 Utilizando a implementação em [WebAssembly](https://webassembly.org/) do [FFMPEG](https://ffmpegwasm.netlify.app/), é possivel fazer a união dos arquivos de áudio e vídeo do Reddit e então enviar o arquivo para fazer download. 
 
 ##### Utilizando API. 
