@@ -2,7 +2,7 @@ import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import React from 'react';
-import Date from '../../components/date'
+import DateParser from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import Comentarios from '../../components/comments'
 import Topics from '../../components/topics';
@@ -25,7 +25,7 @@ export default function Post({ postData, params, topicos }) {
         <h3 className={utilStyles.headingXl} style={{ textAlign: 'center' }}>{postData.title}</h3>
         
         <div className={utilStyles.lightText}>
-          <div><Date dateString={postData.date} />{postData.upd != "" ? "; Atualizado ":""}{postData.upd != "" ? (<Date dateString={postData.upd}></Date>) : ""}</div>
+          <div><DateParser dateString={postData.date} />{postData.upd != "" ? "; Atualizado ":""}{postData.upd != "" ? (<DateParser dateString={postData.upd}></DateParser>) : ""}</div>
         </div>
         <div dangerouslySetInnerHTML={{ __html: topicos }} style={{fontSize:"0.8em", marginTop:"0.8em"}} />
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />

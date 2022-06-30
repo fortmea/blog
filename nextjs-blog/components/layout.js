@@ -7,18 +7,8 @@ import DarkModeToggle from './selector'
 const name = 'João Walter Amadeu'
 export const siteTitle = 'Blog pessoal de João Walter Amadeu'
 
-export default function Layout({ children, home }) {
-  var data = new Date().toLocaleDateString(
-    'pt-br',
-    {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    }
-  ); 
+export default function Layout({ children, home, data }) {
+
   return (
     <div className={styles.container} >
       <Head>

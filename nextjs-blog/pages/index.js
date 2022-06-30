@@ -3,11 +3,11 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
-import Date from '../components/date'
+import DateParser from '../components/date'
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, data }) {
   return (
-    <Layout home>
+    <Layout home data={data}>
       <Head>
         <title>{siteTitle}</title>
         <link rel="manifest" href="manifest.json" />
@@ -49,23 +49,34 @@ export default function Home({ allPostsData }) {
               </Link>
               <br />
               <small className={utilStyles.lightText}>
-                <div><Date dateString={date} />{upd != "" ? "; Atualizado ":""}{upd != "" ? (<Date dateString={upd}></Date>) : ""}</div>
+                <div><DateParser dateString={date} />{upd != "" ? "; Atualizado " : ""}{upd != "" ? (<DateParser dateString={upd}></DateParser>) : ""}</div>
               </small>
             </li>
           ))}
         </ul>
       </section>
-      
+
     </Layout>
   )
 }
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
+  const data = new Date().toLocaleDateString(
+    'pt-br',
+    {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    }
+  );
   return {
     props: {
       allPostsData,
-
+      data
     }
   }
 }
