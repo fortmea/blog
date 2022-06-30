@@ -62,7 +62,9 @@ export default function Home({ allPostsData, data }) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
-  const data = new Date().toLocaleDateString(
+  var data = new Date();
+  data.setHours(data.getHours() - 3);
+  data = data.toLocaleDateString(
     'pt-br',
     {
       weekday: 'long',
@@ -73,6 +75,7 @@ export async function getStaticProps() {
       minute: '2-digit'
     }
   );
+  
   return {
     props: {
       allPostsData,
