@@ -8,10 +8,21 @@ const name = 'João Walter Amadeu'
 export const siteTitle = 'Blog pessoal de João Walter Amadeu'
 
 export default function Layout({ children, home }) {
+  var data = new Date().toLocaleDateString(
+    'pt-br',
+    {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    }
+  ); 
   return (
     <div className={styles.container} >
       <Head>
-      <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
         <link rel="icon" href="/favicon.svg" />
         <meta
           name="description"
@@ -20,9 +31,9 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
+
       <header className={styles.header}>
-      
+
         {home ? (
           <>
             <Image
@@ -33,7 +44,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl} style={{textAlign:'center'}}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl} style={{ textAlign: 'center' }}>{name}</h1>
           </>
         ) : (
           <>
@@ -51,7 +62,7 @@ export default function Layout({ children, home }) {
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
-                <a className={utilStyles.colorInherit} style={{textAlign:'center'}}>{name}</a>
+                <a className={utilStyles.colorInherit} style={{ textAlign: 'center' }}>{name}</a>
               </Link>
             </h2>
           </>
@@ -61,14 +72,14 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a><i className="fa fa-home" style={{color: "#999"}} aria-hidden="true"></i> De volta ao início</a>
+            <a><i className="fa fa-home" style={{ color: "#999" }} aria-hidden="true"></i> De volta ao início</a>
           </Link>
         </div>
       )}
-      <br/>
+      <br />
       <DarkModeToggle></DarkModeToggle>
-      
+      <h6>Data de build: {data}</h6>
     </div>
-    
+
   )
 }
