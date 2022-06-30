@@ -11,6 +11,13 @@ import axios from 'axios';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Alert from 'react-bootstrap/Alert';
 import Collapse from 'react-bootstrap/Collapse';
+import { createFFmpeg } from '@ffmpeg/ffmpeg';
+
+const ffmpeg = createFFmpeg({
+    corePath: "/ffmpeg/ffmpeg-core.js",
+    // Use public address
+    log: true,
+});
 export default function videosaver() {
     const [input, setInput] = useState('');
     const [downloadp, setDownloadp] = useState(0);
@@ -32,7 +39,7 @@ export default function videosaver() {
 
         }
 
-        if (audio) {
+        if (audio) {/*
             const address = oadd.toString();
             const filedata = async (url) => {
                 const response = await axios.get(("https://api.fortmea.tech/video?url=" + url), {
@@ -43,7 +50,36 @@ export default function videosaver() {
                 });
                 return response.data;
             }
-            fileDownload(await filedata(address), "video.mp4")
+            fileDownload(await filedata(address), "video.mp4")*/
+            const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
+            const fetcher = async (url) => {
+                const response = await axios.get(url);
+                return response.data;
+            }
+            var data = (await fetcher(address))
+            var url = ""
+            data = data[0]["data"]["children"][0]["data"]
+            if (!data["media"]) {
+                url = data["crosspost_parent_list"][0]["media"]["reddit_video"]["fallback_url"];
+            } else {
+                url = data["media"]["reddit_video"]["fallback_url"];
+            }
+            const filedata = async (url) => {
+                const response = await axios.get(url, {
+                    responseType: 'blob', onDownloadProgress: function (progressEvent) {
+                        var prog = parseInt(progressEvent["loaded"]) / parseInt(progressEvent["total"])
+                        setDownloadp(Math.ceil(prog * 100))
+                    }
+                });
+                return response.data;
+            }
+            await ffmpeg.load();
+            ffmpeg.FS('writeFile', 'test.avi', filedata);
+            await ffmpeg.run('-i', 'test.avi', 'test.mp4');
+            data = ffmpeg.FS('readFile', 'test.mp4');
+            fileDownload(data.buffer, "video.mp4");
+            //setVideoSrc(URL.createObjectURL(new Blob([], { type: 'video/mp4' })));
+
         } else {
             const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
             const fetcher = async (url) => {
