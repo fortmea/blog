@@ -4,7 +4,7 @@ date: "2022-06-24"
 anterior: "ipfs"
 proximo: ""
 catimage: ""
-upd: "2022-06-26"
+upd: "2022-06-30"
 ---
 
 ### Como funciona? 
@@ -17,7 +17,11 @@ Os dados são todos processados localmente, fazendo com que a velocidade de down
 ![Ferramenta reddit saver. Um campo de texto, um botão para fazer o download, barra de progresso em 100%](https://fortmea.tech/images/redditsaver.png "A ferramenta é muito simples, precisando de apenas um click para ser utilizada. Além disso, todos os dados são processados localmente, sem lentidão causada pelo servidor da minha ferramenta.")
 
 ### Audio
-##### Opcional, utilizando API. 
+##### Client-side
+Atualizado no dia 30/06/2022
+Utilizando a implementação em [WebAssembly](https://webassembly.org/) do [FFMPEG](https://ffmpegwasm.netlify.app/), é possivel fazer a união dos arquivos de áudio e vídeo do Reddit e então enviar o arquivo para fazer download. 
+
+##### Utilizando API. 
 <i>Atualizado no dia 26/06/2022</i>
 
 Audio é armazenado separadamente dos vídeos no Reddit, portanto é necessário utilizar o FFMPEG para juntar os arquivos. [A API utilizada no projeto pode ser encontrada aqui.](https://github.com/fortmea/flaskpylocaldb/blob/main/app.py)
