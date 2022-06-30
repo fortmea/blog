@@ -1,3 +1,20 @@
+function headers() {
+    return [
+        {
+            source: '/ffmpeg',
+            headers: [
+                {
+                    key: 'Cross-Origin-Embedder-Policy',
+                    value: 'require-corp',
+                },
+                {
+                    key: 'Cross-Origin-Opener-Policy',
+                    value: 'same-origin',
+                },
+            ],
+        },
+    ];
+}
 module.exports = {
 
     trailingSlash: true,
@@ -6,23 +23,8 @@ module.exports = {
         path: '',
     },
     reactStrictMode: true,
-    async headers() {
-        return [
-            {
-                source: '/',
-                headers: [
-                    {
-                        key: 'Cross-Origin-Embedder-Policy',
-                        value: 'require-corp',
-                    },
-                    {
-                        key: 'Cross-Origin-Opener-Policy',
-                        value: 'same-origin',
-                    },
-                ],
-            },
-        ];
-    },
+    headers: headers(),
+
 
 
 };

@@ -11,7 +11,7 @@ import axios from 'axios';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Alert from 'react-bootstrap/Alert';
 import Collapse from 'react-bootstrap/Collapse';
-import { createFFmpeg } from '@ffmpeg/ffmpeg';
+import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 
 const ffmpeg = createFFmpeg({
     corePath: "/ffmpeg/ffmpeg-core.js",
@@ -39,18 +39,7 @@ export default function videosaver() {
 
         }
 
-        if (audio) {/*
-            const address = oadd.toString();
-            const filedata = async (url) => {
-                const response = await axios.get(("https://api.fortmea.tech/video?url=" + url), {
-                    responseType: 'blob', onDownloadProgress: function (progressEvent) {
-                        var prog = parseInt(progressEvent["loaded"]) / parseInt(progressEvent["total"])
-                        setDownloadp(Math.ceil(prog * 100))
-                    }
-                });
-                return response.data;
-            }
-            fileDownload(await filedata(address), "video.mp4")*/
+        if (audio) {
             const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
             const fetcher = async (url) => {
                 const response = await axios.get(url);
@@ -58,12 +47,17 @@ export default function videosaver() {
             }
             var data = (await fetcher(address))
             var url = ""
+            var audio_url = ""
             data = data[0]["data"]["children"][0]["data"]
             if (!data["media"]) {
                 url = data["crosspost_parent_list"][0]["media"]["reddit_video"]["fallback_url"];
+
             } else {
                 url = data["media"]["reddit_video"]["fallback_url"];
             }
+            audio_url = data['secure_media']['reddit_video']['hls_url'].split('HLS')[0]
+
+            audio_url += 'HLS_AUDIO_160_K.aac'
             const filedata = async (url) => {
                 const response = await axios.get(url, {
                     responseType: 'blob', onDownloadProgress: function (progressEvent) {
@@ -73,12 +67,18 @@ export default function videosaver() {
                 });
                 return response.data;
             }
+
+            var vdata = await filedata(url)
+            var adata = await filedata(audio_url)
             await ffmpeg.load();
-            ffmpeg.FS('writeFile', 'test.avi', filedata);
-            await ffmpeg.run('-i', 'test.avi', 'test.mp4');
-            data = ffmpeg.FS('readFile', 'test.mp4');
+
+            var videodata = await fetchFile(vdata)
+            var audiodata = await fetchFile(adata);
+            ffmpeg.FS('writeFile', 'video.mp4', videodata);
+            ffmpeg.FS('writeFile', 'audio.aac', audiodata)
+            await ffmpeg.run('-i', 'video.mp4', '-i', 'audio.aac', '-c', 'copy', 'out.mp4');
+            data = ffmpeg.FS('readFile', 'out.mp4');
             fileDownload(data.buffer, "video.mp4");
-            //setVideoSrc(URL.createObjectURL(new Blob([], { type: 'video/mp4' })));
 
         } else {
             const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
@@ -110,6 +110,7 @@ export default function videosaver() {
     return (<>
         <Head>
             <meta property="og:title" content="Reddit saver" />
+            <script src="/coi-serviceworker.js"></script>
             <meta property="og:locale" content="pt_BR" />
             <meta property='og:image' content="https://og.fortmea.tech/Reddit saver - download videos from reddit, in their original quality.png?theme=light&md=1&fontSize=100px&images=https://fortmea.tech/favicon.svg" />
             <meta property="og:description"
@@ -133,7 +134,7 @@ export default function videosaver() {
 
                                 <Form.Control id="inputurl" value={input} onInput={(e) => { setInput(e.target.value); setdownloading(false); setDownloadp(0) }} placeholder="Insert video link here..." />
                                 <Form.Group className="mb-3" controlId="Checkbox">
-                                    <Form.Check type="checkbox" label="Audio? (usually takes longer, data processed server-side)" style={{ fontSize: '0.8rem', marginTop: '1em' }} defaultChecked={audio}
+                                    <Form.Check type="checkbox" label="Audio? (usually takes longer, data needs to be processed)" style={{ fontSize: '0.8rem', marginTop: '1em' }} defaultChecked={audio}
                                         onChange={() => setaudio(!audio)} />
                                 </Form.Group>
                             </Form.Group>
