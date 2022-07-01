@@ -68,7 +68,8 @@ export default function Layout({ children, home, data }) {
       )}
       <br />
       <DarkModeToggle></DarkModeToggle>
-      <h6>Data de build: {data}</h6>
+      {home ? <h6>Data de build: {data}</h6> : ""}
+
     </div>
 
   )
