@@ -68,7 +68,7 @@ Por padrão o SearxNG utiliza a porta 443 para conexão HTTPS, podendo causar co
 ```
 Ative o arquivo com o comando ```a2ensite nomedoarquivo.conf``` e recarregue o serviço.
 
-### Resultado:
+### Resultado
 
 ![A ferramenta tem uma aparência muito agradável, e outros temas podem ser instalados, além de muitas outras configurações que estão disponíveis](https://fortmea.tech/images/searx.png "A ferramenta tem uma aparência muito agradável, e outros temas podem ser instalados, além de muitas outras configurações que estão disponíveis")
 
