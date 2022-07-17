@@ -121,25 +121,44 @@ a {
 }
 
 pre {
-  background-color: #9E9E9E;
-  padding: 5px;
-  border-radius: 0.3em;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-left: 3px solid #f36d33;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
+}
+img {
+  margin-left: auto;
+  margin-right: auto;
+  transition:transform 0.55s ease;
 }
 
-pre code {
-  white-space: inherit;
+img:hover {
+  -webkit-transform:scale(8); /* or some other value */
+  transform:scale(1.5);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 }
 
 code {
   font-family: 'Fira Code VF', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: #9E9E9E;
+  background: #f4f4f4;
   color: #212121;
   word-wrap: break-word;
   box-decoration-break: clone;
   padding: .1rem .3rem .2rem;
   border-radius: .2rem;
-  white-space: nowrap;
+  max-width: min-content;
 }
 
 a:hover {

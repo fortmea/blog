@@ -1,5 +1,5 @@
 ---
-title: "Configurando seu próprio motor de busca privado com o SearxNG. Chega da invasão de privacidade do Google."
+title: "Configurando seu próprio motor de busca privado com o SearxNG"
 date: "2022-07-17"
 anterior: "redditsaver"
 proximo: ""

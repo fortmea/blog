@@ -2,7 +2,7 @@
 title: "Ferramenta para fazer o download de vídeos do Reddit"
 date: "2022-06-24"
 anterior: "ipfs"
-proximo: ""
+proximo: "searx"
 catimage: ""
 upd: "2022-06-30"
 ---
