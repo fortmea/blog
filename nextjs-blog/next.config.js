@@ -15,8 +15,9 @@ function headers() {
         },
     ];
 }
-module.exports = {
-
+const removeImports = require("next-remove-imports")();
+module.exports = removeImports({
+    experimental: { esmExternals: true },
     trailingSlash: true,
     images: {
         loader: 'akamai',
@@ -27,4 +28,4 @@ module.exports = {
 
 
 
-};
+});
