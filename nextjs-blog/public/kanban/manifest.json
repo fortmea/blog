@@ -1,6 +1,6 @@
 {
-  "name": "appmac",
-  "short_name": "appmac",
+  "name": "Kanban",
+  "short_name": "Kanban",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
