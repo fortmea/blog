@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head'
 export default function e404() {
     return (
-        <Layout>
+        <>
             <Head>
                 <script>
                         const queryString = window.location.search;
@@ -20,7 +20,6 @@ export default function e404() {
             <div className="card">
                 <div className='container'><h3>Erro 404!</h3><p id="pagina"></p></div>
                 </div>
-            
-        </Layout>
+            </>
     )
 }

@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import DateParser from '../components/date'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home({ allPostsData, data }) {
   return (
@@ -36,8 +37,9 @@ export default function Home({ allPostsData, data }) {
         <p>Analista de sistemas na FAUS cursos online.</p>
         <p>
           Visite meu{' '}
-          <a href="https://github.com/fortmea"><i className="fa fa-github" aria-hidden="true"></i> Github</a> ou meu <a href="https://www.linkedin.com/in/jo%C3%A3o-walter-amadeu-2773b51b9/"><i className="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>.
+          <a href="https://github.com/fortmea"><i className="fa fa-github" aria-hidden="true"></i> Github</a> ou meu <a href="https://www.linkedin.com/in/jo%C3%A3o-walter-amadeu-2773b51b9/"><i className="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a> e também minha <a href='/gallery'><i className='fa fa-images' aria-hidden="true"/> galeria.</a>
         </p>
+       
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Publicações</h2>
