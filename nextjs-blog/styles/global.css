@@ -120,6 +120,23 @@ a {
   text-decoration: none;
 }
 
+.imgcontainer {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.imgtitle {
+  transition: transform 0.55s ease;
+  position: absolute;
+  bottom: 32px;
+  left: 16px;
+  visibility: visible;
+  animation-duration: 100ms;
+  color: white;
+  text-shadow: 0px 0px 20px #000000;
+}
+
 pre {
   background: #f4f4f4;
   border: 1px solid #ddd;
@@ -147,6 +164,15 @@ img:hover {
   -webkit-transform: scale(8);
   /* or some other value */
   transform: scale(1.5);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+img:hover .imgtitle{
+  -webkit-transform: scale(8);
+  /* or some other value */
+  transform: scale(1.5);
+  font-size: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
 }
