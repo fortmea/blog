@@ -31,7 +31,7 @@ export default function Home({ allPostsData, data }) {
           content="Um lugar para descrever minhas pesquisas, e desenvolvimentos profissionais e pessoais." />
         <link rel="icon" sizes="256x256" href="favicon.png" />
         <link rel="apple-touch-icon" sizes="256x256" href="favicon.png"></link>
-        <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/c1ff9f4537.js" crossOrigin="anonymous"></script>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Analista de sistemas na FAUS cursos online.</p>
