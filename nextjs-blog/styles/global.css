@@ -28,7 +28,7 @@
 
 html,
 body {
-
+  
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -387,4 +387,6 @@ img {
 
 .center {
   margin: auto;
+}a{
+  text-decoration: none;
 }
