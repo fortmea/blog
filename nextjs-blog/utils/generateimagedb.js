@@ -7,7 +7,7 @@ if (!fs.existsSync(dir)) {
 fs.readdir(imagesFolder, (err, files) => {
     files.forEach(file => {
         fs.writeFile("./images/" + file.replace(".jpeg", ".md"), `---
-title: "${file.replace(".jpeg", "").replaceAll("_", " ")}"
+title: "${file.replace(".jpeg", "").replaceAll("__",",").replaceAll("_", " ")}"
 date: "${Date.now()}"
 img: "${file}"
 ---

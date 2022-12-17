@@ -19,12 +19,12 @@ export default function Gallery({ allImagesData }) {
             <h1>Galeria de imagens</h1>
             <LightgalleryProvider style={{ width: "100%" }}>
                 <Container style={{ width: "100%" }} >
-                    <Row xs={4}>
+                    <Row xs={3}>
                         {allImagesData.map(({ id, date, img, prompt, nprompt, model, seed, title }) => (
-                            <Col key={id} className={"imgcontainer"}>
+                            <Col key={id} className={"imgcontainer"} style={{marginBottom:"2em"}}>
                                 <LightgalleryItem src={"../sd/" + img} key={id} group="sd" >
-                                    <Image src={"../sd/" + img} key={id} style={{marginBottom:"2em"}} />
-                                    
+                                    <Image src={"../sd/" + img} key={id} style={{marginBottom:".5em"}}/>
+                                
                                 </LightgalleryItem>
                             </Col>
                         ))
