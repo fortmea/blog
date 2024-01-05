@@ -57,7 +57,7 @@ export default function videosaver() {
             }
             audio_url = data['secure_media']['reddit_video']['hls_url'].split('HLS')[0]
 
-            audio_url += 'HLS_AUDIO_160_K.aac'
+            audio_url += 'HLS_AUDIO_128.aac'
             const filedata = async (url) => {
                 const response = await axios.get(url, {
                     responseType: 'blob', onDownloadProgress: function (progressEvent) {
