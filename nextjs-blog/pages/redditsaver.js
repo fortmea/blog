@@ -12,6 +12,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import Alert from 'react-bootstrap/Alert';
 import Collapse from 'react-bootstrap/Collapse';
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
+import { useRouter } from "next/router";
 
 const ffmpeg = createFFmpeg({
     corePath: "/ffmpeg/ffmpeg-core.js",
@@ -24,6 +25,10 @@ export default function videosaver() {
     const [downloading, setdownloading] = useState(false);
     const [audio, setaudio] = useState(false);
     const [error, seterror] = useState(false);
+    const router = useRouter();
+  const handleRefresh = () => {
+    router.reload();
+  };
     useEffect(() => {
         document.querySelector("body").classList.add("redditsaver");
     });
@@ -79,7 +84,7 @@ export default function videosaver() {
             await ffmpeg.run('-i', 'video.mp4', '-i', 'audio.aac', '-c', 'copy', 'out.mp4');
             data = ffmpeg.FS('readFile', 'out.mp4');
             fileDownload(data.buffer, "video.mp4");
-
+            handleRefresh()
         } else {
             const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
             const fetcher = async (url) => {
@@ -104,6 +109,7 @@ export default function videosaver() {
                 return response.data;
             }
             fileDownload(await filedata(url), "video.mp4")
+            handleRefresh()
         }
         setdownloading(false)
     }
@@ -146,6 +152,7 @@ export default function videosaver() {
                     {downloading ? <div style={{ marginTop: '1em' }}><h5>Progress: </h5><ProgressBar now={downloadp} label={`${downloadp}%`} /></div> : ""}
 
                 </Card.Body>
+                <Card.Footer>Some problems have been found with specific posts. Still working on a fix.</Card.Footer>
             </Card>
         </Container>
     </>
