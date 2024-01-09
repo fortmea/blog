@@ -45,7 +45,7 @@ export default function videosaver() {
         }
 
         if (audio) {
-            const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
+            const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length) + ".json";
             const fetcher = async (url) => {
                 const response = await axios.get(url);
                 return response.data;
@@ -108,7 +108,7 @@ export default function videosaver() {
                 });
                 return response.data;
             }
-            fileDownload(await filedata(url), "video.mp4")
+            fileDownload(await filedata(url), "${oadd.pathname}.mp4")
             handleRefresh()
         }
         setdownloading(false)
