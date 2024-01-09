@@ -83,7 +83,7 @@ export default function videosaver() {
             ffmpeg.FS('writeFile', 'audio.aac', audiodata)
             await ffmpeg.run('-i', 'video.mp4', '-i', 'audio.aac', '-c', 'copy', 'out.mp4');
             data = ffmpeg.FS('readFile', 'out.mp4');
-            fileDownload(data.buffer, "video.mp4");
+            fileDownload(data.buffer, "${oadd.pathname}.mp4);
             handleRefresh()
         } else {
             const address = "https://www.reddit.com/" + oadd.pathname.substring(0, oadd.pathname.length - 1) + ".json";
